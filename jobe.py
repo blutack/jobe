@@ -62,7 +62,7 @@ class Printer:
     ok = lambda _, output: print('\033[92m>>> ' + output + '\033[0m')
     warn = lambda _, output: print('\033[93m>>> ' + output + '\033[0m')   
     err = lambda _, output: print('\033[91m>>> ' + output + '\033[0m')
-    banner = lambda self: self.info('JOBE - git\'in the job done')
+    banner = lambda self: self.info("JOBE - git\'in the job done")
     
     def debug(self, output):
         if self.verbose:
@@ -117,8 +117,8 @@ class Repo:
     def commit(self, message):
         self.git("commit -a -m '" + message + "'")
         
-    def push(self):
-        print(self.git("push --all"))
+    def push(self, branch = "--all"):
+        print(self.git("push " + branch))
         
     def short_hash(self):
         return self.git("rev-parse --short HEAD")
@@ -182,7 +182,7 @@ if __name__ == "__main__":
                     p.info("Invalid config, adding sample config file.")
                     p.info("Please pull and try again.")
                     repo.reset()
-                    repo.push()
+                    repo.push("origin master")
                     sys.exit(0)
                     
                 p.info("Received job")
