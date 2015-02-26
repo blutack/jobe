@@ -88,7 +88,7 @@ class Repo:
         
         if f.read() != sample_config or len(os.listdir(self.work_dir)) > 2:
                 f.close()
-                self.git("rm *")
+                self.git("rm -f *")
                 
                 with self.open_file("jobe.ini", 'w') as new_sample:
                     new_sample.write(sample_config)
