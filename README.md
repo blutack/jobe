@@ -3,7 +3,7 @@ The git batch runner.
 
 Requirements
 ------------
-* Python 3.3 or later
+* Python 3.2 or later
 * git
 * make
 
