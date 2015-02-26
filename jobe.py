@@ -17,7 +17,7 @@ detach = yes
 
 # Time to execute the command (server timezone). 
 # To execute instantly, set this to a date in the past.
-run_at = 2000-00-00T12:00:00.0
+run_at = 2000-01-01T12:00:00.0
 
 # Print all debug information
 verbose = no
