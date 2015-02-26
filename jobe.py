@@ -31,13 +31,7 @@ class Worker:
         proc = sp.Popen(["python3", os.path.realpath(__file__), self.job_id], stdout=sp.PIPE, stderr=sp.PIPE, stdin=sp.PIPE)
         
         if not detach:
-            try:
-                stdout, stderr = proc.communicate(timeout = 90)
-
-            except sp.TimeoutExpired:
-                proc.kill()
-                stdout, stderr = proc.communicate()
-                p.warn("Process killed due to timeout")
+            stdout, stderr = proc.communicate()
             
             p.debug(stdout)
             p.debug(stderr)      
@@ -132,13 +126,7 @@ class Repo:
     def git(self, command):
         proc = sp.Popen("git --git-dir=" + self.work_dir + "/.git" + " " + command, shell=True, cwd = self.work_dir, 
              stdout=sp.PIPE, stderr=sp.PIPE, universal_newlines=True)
-        try:
-         stdout, stderr = proc.communicate(timeout = 30)
-
-        except sp.TimeoutExpired:
-         proc.kill()
-         stdout, stderr = proc.communicate()
-         p.err("Git killed due to timeout")
+        stdout, stderr = proc.communicate()
          
         p.debug(stdout)
         p.debug(stderr)
