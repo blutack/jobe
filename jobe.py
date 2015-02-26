@@ -41,7 +41,7 @@ class Worker:
             time.sleep(config.wait)
         proc = sp.Popen(config.command, stdout=repo.open_file("stdout.log"), 
                 stderr=repo.open_file("stderr.log"), cwd=repo.work_dir, shell=True)
-        proc.wait(timeout = config.timeout)
+        proc.wait()
         with repo.open_file("exitcode.log") as exit_file:
             print(proc.returncode, file=exit_file)
     
