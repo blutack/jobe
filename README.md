@@ -23,7 +23,7 @@ Mostly just because I wanted to see how far I could run with the idea.
 But it turns out to be surprisingly interesting.
 Every client has a complete history of all jobs run and the inputs, with
 git hashes backing everything. It works over any transport git supports
-and can be used with any git web UI. Every job executes in a clean workspace.
+and can be used with any git web UI.
 
 How Does It Work?
 -----------------
