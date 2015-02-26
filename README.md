@@ -33,6 +33,7 @@ A subprocess is started and detached which checks out the repo to a seperate tem
 
 What's Missing?
 ---------------
+* Python 2 support - I wanted to try using Python 3 for a project but this was probably a bad choice
 * Solid error checking (there basically isn't any)
 * Realtime notifications (could be easily added via email, or using ```watch "git pull --all"```)
 * Some sane idea of how to handle large output files (git annex?)
